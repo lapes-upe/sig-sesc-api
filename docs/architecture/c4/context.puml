@@ -1,0 +1,13 @@
+@startuml
+!include c4.puml
+
+title Sistema de Informação Gerencial (SIG) - Diagrama de Contexto
+
+Person(user, "Usuário", "Utiliza o SIG para gerenciamento")
+System(sig, "SIG", "Fornece funcionalidades de gerenciamento")
+System_Ext(externalSystem, "Sistema Externo", "Fornece dados complementares")
+
+Rel(user, sig, "Utiliza")
+Rel(sig, externalSystem, "Obtém dados"
+
+@enduml

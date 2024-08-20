@@ -1,0 +1,6 @@
+@startuml
+!include c4.puml
+
+' Seu diagrama C4 aqui
+
+@enduml

@@ -1,0 +1,20 @@
+@startuml
+!include c4.puml
+
+C4Container
+title Contêineres do SIG
+
+Person(user, "Usuário", "Utiliza o SIG para gerenciamento")
+System_Boundary(sig, "SIG") {
+    Container(webApp, "Aplicação Web", "React", "Interface do usuário")
+    Container(apiApp, "API Application", "Node.js, Express", "Backend API")
+    ContainerDb(db, "Database", "PostgreSQL", "Armazena dados do SIG")
+}
+System_Ext(externalSystem, "Sistema Externo", "Fornece dados complementares")
+
+Rel(user, webApp, "Acessa via HTTPS")
+Rel(webApp, apiApp, "Faz chamadas API", "JSON/HTTPS")
+Rel(apiApp, db, "Lê e escreve", "SQL")
+Rel(apiApp, externalSystem, "Obtém dados", "API")
+
+@enduml
